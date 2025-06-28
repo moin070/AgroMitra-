@@ -22,20 +22,29 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: fixed; /* Fixed navbar */
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 }
-
-header h1 {
-  font-size: 1.5rem;
-}
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+} 
 
 nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 nav a {
@@ -112,7 +121,12 @@ footer {
   margin-top: 2rem;
 }
 
+
+
 /* Responsive Design */
+
+
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -120,10 +134,22 @@ footer {
     gap: 1rem;
   }
 
+   .menu-toggle {
+    display: block;
+  }
   nav {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
     width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  header {
+    align-items: flex-start;
   }
 
   .hero {
